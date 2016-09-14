@@ -1,0 +1,64 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1394714719807,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": null,
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1463484840130,
+  "modifiedBy": "16f80e35-6564-4b68-9b0a-f38ccf94617c",
+  "name": "Module 1",
+  "priority": "5542",
+  "properties": {
+  },
+  "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/",
+  "resourceChildren": [
+    {
+      "created": 1463477259265,
+      "creator": "1a6df141-2b69-4f5e-ae97-0d9686e8fcc7",
+      "description": null,
+      "hidden": true,
+      "mimeType": null,
+      "modified": 1463477259266,
+      "modifiedBy": "1a6df141-2b69-4f5e-ae97-0d9686e8fcc7",
+      "name": "lessons",
+      "priority": "9",
+      "properties": {
+      },
+      "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/lessons\/",
+      "resourceChildren": [],
+      "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/lessons\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/lessons\/"
+    },
+    {
+      "created": 1469779974944,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "11 Jul 2016 09:00:00 GMT",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1469809179372,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Start date",
+      "priority": "3",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Start date\/",
+      "resourceChildren": [],
+      "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Start date\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Start%20date\/"
+    }
+  ],
+  "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

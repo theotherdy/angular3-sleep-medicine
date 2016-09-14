@@ -1,0 +1,27 @@
+<!--div class="hidden-xs" (click)="$event.preventDefault()"-->
+<div class="hidden-xs">
+    <tabset [justified]="true" type="tabs">
+        <!--tab *ngFor="let week of modyule.weeks"
+            [heading]="week.name"
+            [active]="week.active"
+            (select)="week.active = true"
+            (deselect)="week.active = false"-->
+        <tab *ngFor="let week of (weeksObservable | async)"
+            [heading]="week.name"
+            [active]="week.active"
+            (select)="week.active = true"
+            (deselect)="week.active = false">
+            <week-detail-component [week]="week"></week-detail-component>
+        </tab>
+    </tabset>
+</div>
+<div class="visible-xs">
+    <div *ngFor="let week of (weeksObservable | async)" class="panel panel-default">
+        <div class="panel-heading">
+            <div class="h2 text-center"> {{week.name}}<br/><span class="h4"><fa [name]="'calendar'"></fa> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}</span></div>
+        </div>
+        <div class="panel-body">
+            <week-detail-component [week]="week"></week-detail-component>
+        </div>
+    </div>
+</div>

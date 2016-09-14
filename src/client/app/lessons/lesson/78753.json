@@ -1,0 +1,246 @@
+{
+  "contentsList": [
+    {
+      "contentsList": [
+        {
+          "contentsList": [
+            {
+              "html": "Lecture topics description [Dr A Lecturer] I'm in lecture 1, Mod 1, Week 2",
+              "id": 80868,
+              "name": "",
+              "pageId": 14356,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "text\/html",
+              "id": 78744,
+              "name": "Lecture link",
+              "pageId": 14356,
+              "sakaiId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Lecture 1\/urls\/weblearn.ox.ac.uk_20160728201923.url",
+              "type": 1,
+              "url": "\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Lecture 1\/urls\/weblearn.ox.ac.uk_20160728201923.url",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "<div data-copyright=\"true\" class=\"no-highlight\" data-description=\"true\" data-directory='\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/\/Lecture 1\/' data-files=\"true\" data-folder-listing=\"true\"><\/div>",
+              "id": 80863,
+              "name": "",
+              "pageId": 14356,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "contentsList": [
+                "MAX level reached (8):LessonsEntityProvider.DecoratedLesson(sakaiId=, html=<ol style=\"line-height: 20.8px;\">  <li>Demonstrate a broad understanding of sleep as a complex neurophysiologic phenomenon ubiquitous across the animal kingdom;<\/li>  <li>Describe basic physiological processes associated with sleep\/wake behavior in animals and humans;<\/li>  <li>Explain how sleep is regulated through the interaction of homeostatic and circadian process and how it is influenced by environment and disease;<\/li>  <li>Give examples of abnormal sleep patterns in healthy subjects and in patients, and discuss the origin and mechanisms of sleep disruption;<\/li>  <li>Compare methodological approaches used in basic research and clinical practice to record and analyse sleep;  <\/li>  <li>Critically discuss leading theories of sleep function;<\/li> <\/ol> , url=)"
+              ],
+              "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78746",
+              "html": "",
+              "id": 78746,
+              "name": "Learning outcomes",
+              "pageId": 14356,
+              "sakaiId": "14357",
+              "type": 2,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            }
+          ],
+          "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78731",
+          "html": "",
+          "id": 78731,
+          "name": "Lecture 1 title",
+          "pageId": 14349,
+          "sakaiId": "14356",
+          "type": 2,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "contentsList": [
+            {
+              "html": "text\/html",
+              "id": 78750,
+              "name": "Lecture link",
+              "pageId": 14359,
+              "sakaiId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Lecture 1\/urls\/weblearn.ox.ac.uk_20160728201923.url",
+              "type": 1,
+              "url": "\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Lecture 1\/urls\/weblearn.ox.ac.uk_20160728201923.url",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "<div data-copyright=\"true\" class=\"no-highlight\" data-description=\"true\" data-directory='\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/\/Lecture 2\/' data-files=\"true\" data-folder-listing=\"true\"><\/div>",
+              "id": 80864,
+              "name": "",
+              "pageId": 14359,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "Lecture 2 description [Prof B Lecturer] I'm in Lecture 2, Week 2, Mod 2",
+              "id": 80869,
+              "name": "",
+              "pageId": 14359,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            }
+          ],
+          "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78732",
+          "html": "",
+          "id": 78732,
+          "name": "Lecture 2 title",
+          "pageId": 14349,
+          "sakaiId": "14359",
+          "type": 2,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        }
+      ],
+      "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78748",
+      "html": "",
+      "id": 78748,
+      "name": "Lectures",
+      "pageId": 14358,
+      "sakaiId": "14349",
+      "type": 2,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    },
+    {
+      "contentsList": [
+        {
+          "html": "This is the introduction to the seminar. It should contain the names of the lecturers in [], separated by &amp; e.g [Jill Fresen &amp; Sumathi Sekaran]",
+          "id": 78733,
+          "name": "",
+          "pageId": 14350,
+          "sakaiId": "",
+          "type": 5,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "html": "text\/html",
+          "id": 78734,
+          "name": "25 Jul 2016 08:00:00 GMT",
+          "pageId": 14350,
+          "sakaiId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminar\/urls\/ox.webex.com_mw31020160728203546.url",
+          "type": 1,
+          "url": "\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminar\/urls\/ox.webex.com_mw31020160728203546.url",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "html": "text\/html",
+          "id": 78735,
+          "name": "25 Jul 2016 13:30:00 GMT",
+          "pageId": 14350,
+          "sakaiId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminars\/urls\/https:__ox.webex.com.url",
+          "type": 1,
+          "url": "\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminars\/urls\/https:__ox.webex.com.url",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "html": "text\/html",
+          "id": 78736,
+          "name": "25 July 2016 19:00:00 GMT",
+          "pageId": 14350,
+          "sakaiId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminar\/urls\/ox.webex.com_mw31020160728203347.url",
+          "type": 1,
+          "url": "\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/lessons\/Seminar\/urls\/ox.webex.com_mw31020160728203347.url",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "html": "<div data-copyright=\"true\" class=\"no-highlight\" data-description=\"true\" data-directory='\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/\/Seminar\/' data-files=\"true\" data-folder-listing=\"true\"><\/div>",
+          "id": 80899,
+          "name": "",
+          "pageId": 14350,
+          "sakaiId": "",
+          "type": 5,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "contentsList": [
+            {
+              "html": "Learning outcomes for Mod 1 Wk 2",
+              "id": 80898,
+              "name": "",
+              "pageId": 14735,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            }
+          ],
+          "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/80897",
+          "html": null,
+          "id": 80897,
+          "name": "Learning Outcomes",
+          "pageId": 14350,
+          "sakaiId": "14735",
+          "type": 2,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "html": "",
+          "id": 78739,
+          "name": "A seminar assignment",
+          "pageId": 14350,
+          "sakaiId": "\/assignment\/8a682d9d-50df-41c7-8146-51f6a9d55242",
+          "type": 3,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        }
+      ],
+      "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78749",
+      "html": "",
+      "id": 78749,
+      "name": "Seminar",
+      "pageId": 14358,
+      "sakaiId": "14350",
+      "type": 2,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    }
+  ],
+  "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78753",
+  "html": null,
+  "id": 78753,
+  "name": "Week 2",
+  "pageId": 0,
+  "sakaiId": "14358",
+  "type": 2,
+  "url": "",
+  "prerequisite": false,
+  "required": false,
+  "entityReference": "\/lessons\/78753",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/78753",
+  "entityId": "78753",
+  "entityTitle": "lesson"
+}

@@ -1,0 +1,25 @@
+<alert *ngIf="noModyulesFound"> You don't appear to have access to any modules.</alert>
+<div *ngIf="modyules?.length > 0">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a *ngIf="selectedModyule" class="navbar-brand" href="#">{{selectedModyule.name}}</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li dropdown (on-toggle)="toggled($event)">
+                    <a href id="simple-dropdown" dropdownToggle>
+                    Other modules <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li *ngFor="let modyule of modyules" (click)="onSelect(modyule)">
+                            <button class="btn  btn-link dropdown-item" type="button">{{modyule.name}}</button>
+                            <!--modyule-detail-component [modyule]="modyule"></modyule-detail-component-->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <weeks-component *ngIf="selectedModyule" [modyule]="selectedModyule"></weeks-component>
+</div>

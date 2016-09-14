@@ -1,0 +1,29 @@
+{
+  "contentsList": [
+    {
+      "html": "<ol style=\"line-height: 20.8px;\">  <li>Demonstrate a broad understanding of sleep as a complex neurophysiologic phenomenon ubiquitous across the animal kingdom;<\/li>  <li>Describe basic physiological processes associated with sleep\/wake behavior in animals and humans;<\/li>  <li>Explain how sleep is regulated through the interaction of homeostatic and circadian process and how it is influenced by environment and disease;<\/li>  <li>Give examples of abnormal sleep patterns in healthy subjects and in patients, and discuss the origin and mechanisms of sleep disruption;<\/li>  <li>Compare methodological approaches used in basic research and clinical practice to record and analyse sleep;  <\/li>  <li>Critically discuss leading theories of sleep function;<\/li> <\/ol> ",
+      "id": 78747,
+      "name": "",
+      "pageId": 14357,
+      "sakaiId": "",
+      "type": 5,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    }
+  ],
+  "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78746",
+  "html": "",
+  "id": 78746,
+  "name": "Learning outcomes",
+  "pageId": 14356,
+  "sakaiId": "14357",
+  "type": 2,
+  "url": "",
+  "prerequisite": false,
+  "required": false,
+  "entityReference": "\/lessons\/78746",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/78746",
+  "entityId": "78746",
+  "entityTitle": "lesson"
+}

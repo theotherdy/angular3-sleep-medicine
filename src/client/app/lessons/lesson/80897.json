@@ -1,0 +1,29 @@
+{
+  "contentsList": [
+    {
+      "html": "Learning outcomes for Mod 1 Wk 2",
+      "id": 80898,
+      "name": "",
+      "pageId": 14735,
+      "sakaiId": "",
+      "type": 5,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    }
+  ],
+  "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/80897",
+  "html": null,
+  "id": 80897,
+  "name": "Learning Outcomes",
+  "pageId": 14350,
+  "sakaiId": "14735",
+  "type": 2,
+  "url": "",
+  "prerequisite": false,
+  "required": false,
+  "entityReference": "\/lessons\/80897",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/80897",
+  "entityId": "80897",
+  "entityTitle": "lesson"
+}

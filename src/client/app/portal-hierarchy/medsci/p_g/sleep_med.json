@@ -1,0 +1,40 @@
+{
+  "redirects": [],
+  "siteId": "d1506490-a468-46ca-a915-417d9d11be2f",
+  "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med",
+  "subsites": [
+    {
+      "redirects": null,
+      "siteId": "a20b83f9-4d3a-4e99-b0c2-849c849f2187",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/mod_1",
+      "subsites": null
+    },
+    {
+      "redirects": null,
+      "siteId": "df83f2a0-4a3e-4e9c-b2a3-1f881dd2c6c0",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/lecture-arch",
+      "subsites": null
+    },
+    {
+      "redirects": null,
+      "siteId": "ee74b6ef-0f57-41e2-9519-ea284b10a546",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/damionspg2",
+      "subsites": null
+    },
+    {
+      "redirects": null,
+      "siteId": "46502779-fda9-43ce-a6da-34ea60224ea3",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/mod_2",
+      "subsites": null
+    },
+    {
+      "redirects": null,
+      "siteId": "159c3e7e-d47f-4dab-9358-1e0977e60276",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/damplaygrnd",
+      "subsites": null
+    }
+  ],
+  "entityReference": "\/portal-hierarchy",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/portal-hierarchy",
+  "entityTitle": "site"
+}

@@ -1,0 +1,115 @@
+{
+  "contentsList": [
+    {
+      "contentsList": [
+        {
+          "contentsList": [
+            {
+              "html": "This is a supplementary lecture in Module 2 [Prof Z Lecturer]",
+              "id": 80888,
+              "name": "",
+              "pageId": 14732,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "text\/html",
+              "id": 80889,
+              "name": "Lecture link",
+              "pageId": 14732,
+              "sakaiId": "\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Supplementary Lecture 1\/urls\/weblearn.ox.ac.uk_20160805155949.url",
+              "type": 1,
+              "url": "\/access\/content\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Supplementary Lecture 1\/urls\/weblearn.ox.ac.uk_20160805155949.url",
+              "prerequisite": false,
+              "required": false
+            }
+          ],
+          "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/80886",
+          "html": null,
+          "id": 80886,
+          "name": "Supplementary Lecture 1",
+          "pageId": 14382,
+          "sakaiId": "14732",
+          "type": 2,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        },
+        {
+          "contentsList": [
+            {
+              "html": "Description for supplementary lecture 2 in Module 2 [Dame J Lecturer]",
+              "id": 80891,
+              "name": "",
+              "pageId": 14733,
+              "sakaiId": "",
+              "type": 5,
+              "url": "",
+              "prerequisite": false,
+              "required": false
+            },
+            {
+              "html": "text\/html",
+              "id": 80892,
+              "name": "Lecture link",
+              "pageId": 14733,
+              "sakaiId": "\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Supplementary Lecture 2\/urls\/weblearn.ox.ac.uk_20160805160139.url",
+              "type": 1,
+              "url": "\/access\/content\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Supplementary Lecture 2\/urls\/weblearn.ox.ac.uk_20160805160139.url",
+              "prerequisite": false,
+              "required": false
+            }
+          ],
+          "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/80890",
+          "html": null,
+          "id": 80890,
+          "name": "Supplementary Lecture 2",
+          "pageId": 14382,
+          "sakaiId": "14733",
+          "type": 2,
+          "url": "",
+          "prerequisite": false,
+          "required": false
+        }
+      ],
+      "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78770",
+      "html": "",
+      "id": 78770,
+      "name": "Lectures",
+      "pageId": 14381,
+      "sakaiId": "14382",
+      "type": 2,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    },
+    {
+      "html": "text\/html",
+      "id": 78830,
+      "name": "End of Module 2 Assessment",
+      "pageId": 14381,
+      "sakaiId": "\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Module 2\/urls\/learntech.imsu.ox.20160730100538.url",
+      "type": 1,
+      "url": "\/access\/content\/group\/46502779-fda9-43ce-a6da-34ea60224ea3\/lessons\/Module 2\/urls\/learntech.imsu.ox.20160730100538.url",
+      "prerequisite": false,
+      "required": false
+    }
+  ],
+  "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/78774",
+  "html": null,
+  "id": 78774,
+  "name": "Module 2",
+  "pageId": 0,
+  "sakaiId": "14381",
+  "type": 2,
+  "url": "",
+  "prerequisite": false,
+  "required": false,
+  "entityReference": "\/lessons\/78774",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/78774",
+  "entityId": "78774",
+  "entityTitle": "lesson"
+}

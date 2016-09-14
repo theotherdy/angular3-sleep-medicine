@@ -1,0 +1,98 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1468846996155,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1469732544068,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Seminar",
+  "priority": "2",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/",
+  "resourceChildren": [
+    {
+      "created": 1468848306379,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "text\/plain",
+      "modified": 1469729360965,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Seminar reading list",
+      "priority": "268435458",
+      "properties": {
+        "DAV:paper": "",
+        "CITATIONS:managinglibrary": "-1",
+        "DAV:department": "",
+        "sakai:reference-root": "\/citation",
+        "DAV:coursename": "",
+        "DAV:term": "",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": "",
+        "DAV:academicyear": ""
+      },
+      "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Seminar",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Seminar",
+      "size": "36",
+      "type": "org.sakaiproject.citation.impl.CitationList",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Seminar"
+    },
+    {
+      "created": 1468847164304,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "modified": 1469729361085,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Sleep Medicine Planner and Outcomes.xlsx",
+      "priority": "268435457",
+      "properties": {
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Sleep Medicine Planner and Outcomes.xlsx",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Sleep Medicine Planner and Outcomes.xlsx",
+      "size": "53529",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/Sleep%20Medicine%20Planner%20and%20Outcomes.xlsx"
+    },
+    {
+      "created": 1469733165509,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1469733165515,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "SQL_Server_2016_Licensing_Guide_EN_US.pdf",
+      "priority": "268435459",
+      "properties": {
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/SQL_Server_2016_Licensing_Guide_EN_US.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/SQL_Server_2016_Licensing_Guide_EN_US.pdf",
+      "size": "1549734",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/SQL_Server_2016_Licensing_Guide_EN_US.pdf"
+    }
+  ],
+  "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Seminar\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

@@ -1,0 +1,29 @@
+{
+  "contentsList": [
+    {
+      "html": "Learning outcomes for Mod 1 Wk 1 seminar",
+      "id": 80896,
+      "name": "",
+      "pageId": 14734,
+      "sakaiId": "",
+      "type": 5,
+      "url": "",
+      "prerequisite": false,
+      "required": false
+    }
+  ],
+  "contentsURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/lesson\/80895",
+  "html": null,
+  "id": 80895,
+  "name": "Learning outcomes",
+  "pageId": 14313,
+  "sakaiId": "14734",
+  "type": 2,
+  "url": "",
+  "prerequisite": false,
+  "required": false,
+  "entityReference": "\/lessons\/80895",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/lessons\/80895",
+  "entityId": "80895",
+  "entityTitle": "lesson"
+}

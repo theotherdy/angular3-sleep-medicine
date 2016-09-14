@@ -1,0 +1,287 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1470564737826,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1470564737828,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Course Information",
+  "priority": "15",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/",
+  "resourceChildren": [
+    {
+      "created": 1470564787323,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1470564787325,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Information Folder 1",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/",
+      "resourceChildren": [
+        {
+          "created": 1470564997186,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1470564997187,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Are sub-folders possible",
+          "priority": "2",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Are sub-folders possible\/",
+          "resourceChildren": [
+            {
+              "created": 1470565084899,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "application\/pdf",
+              "modified": 1470565128570,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "PDF In sub-folder of Info Folder 1.pdf",
+              "priority": "268435462",
+              "properties": "MAX level reached (7):{CHEF:copyrightchoice=Please select, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Are sub-folders possible\/Ohayon 2002 Epidemiology of insomnia.pdf",
+              "resourceChildren": [],
+              "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Are sub-folders possible\/Ohayon 2002 Epidemiology of insomnia.pdf",
+              "size": "184077",
+              "type": "org.sakaiproject.content.types.fileUpload",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%201\/Are%20sub-folders%20possible\/Ohayon%202002%20Epidemiology%20of%20insomnia.pdf"
+            }
+          ],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Are sub-folders possible\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%201\/Are%20sub-folders%20possible\/"
+        },
+        {
+          "created": 1392204623654,
+          "creator": "6ea25267-1c52-4e46-b012-46a51afed85a",
+          "description": "I can add a description for this file if that's useful?",
+          "hidden": false,
+          "mimeType": "application\/pdf",
+          "modified": 1470565206788,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "PDF in Info Folder 1.pdf",
+          "priority": "268435457",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Edinger 2004- Research Diagnostic Criteria for Insomnia.pdf",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/Edinger 2004- Research Diagnostic Criteria for Insomnia.pdf",
+          "size": "1788829",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%201\/Edinger%202004-%20Research%20Diagnostic%20Criteria%20for%20Insomnia.pdf"
+        }
+      ],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 1\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%201\/"
+    },
+    {
+      "created": 1470564787344,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1470564787345,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Information Folder 2",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 2\/",
+      "resourceChildren": [
+        {
+          "created": 1470565150524,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "application\/pdf",
+          "modified": 1470565178449,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "PDF in Info Folder 2.pdf",
+          "priority": "268435458",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 2\/Hyperarousal Concept SMR 2010.pdf",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 2\/Hyperarousal Concept SMR 2010.pdf",
+          "size": "423075",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%202\/Hyperarousal%20Concept%20SMR%202010.pdf"
+        }
+      ],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 2\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%202\/"
+    },
+    {
+      "created": 1470564787365,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1470564787366,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Information Folder 3",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 3\/",
+      "resourceChildren": [
+        {
+          "created": 1470565247255,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "Again, a description's possible - and I can flag a journal article as being copyright",
+          "hidden": false,
+          "mimeType": "application\/pdf",
+          "modified": 1470565324397,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "PDF in Info Folder 3.pdf",
+          "priority": "268435461",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": "",
+            "CHEF:copyrightalert": "true"
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 3\/Harvey 2013 Who is Predisposed to Insomnia.pdf",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 3\/Harvey 2013 Who is Predisposed to Insomnia.pdf",
+          "size": "522199",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%203\/Harvey%202013%20Who%20is%20Predisposed%20to%20Insomnia.pdf"
+        }
+      ],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 3\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%203\/"
+    },
+    {
+      "created": 1470564787394,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1470564787395,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Information Folder 4",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/",
+      "resourceChildren": [
+        {
+          "created": 1470566865436,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "application\/pdf",
+          "modified": 1470566865442,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "LPConsultationBooklet.pdf",
+          "priority": "268435457",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/LPConsultationBooklet.pdf",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/LPConsultationBooklet.pdf",
+          "size": "854689",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%204\/LPConsultationBooklet.pdf"
+        },
+        {
+          "created": 1470566865509,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "modified": 1470566865524,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Medical_Flow_Chart.docx",
+          "priority": "268435458",
+          "properties": {
+            "CHEF:copyrightchoice": "Material is subject to fair dealing exception. ",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/Medical_Flow_Chart.docx",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/Medical_Flow_Chart.docx",
+          "size": "299301",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%204\/Medical_Flow_Chart.docx"
+        },
+        {
+          "created": 1470566865568,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "modified": 1470566865582,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Sleep Medicine Planner and Outcomes.xlsx",
+          "priority": "268435459",
+          "properties": {
+            "CHEF:copyrightchoice": "Material is subject to fair dealing exception. ",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/Sleep Medicine Planner and Outcomes.xlsx",
+          "resourceChildren": [],
+          "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/Sleep Medicine Planner and Outcomes.xlsx",
+          "size": "53529",
+          "type": "org.sakaiproject.content.types.fileUpload",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%204\/Sleep%20Medicine%20Planner%20and%20Outcomes.xlsx"
+        }
+      ],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/Information Folder 4\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/Information%20Folder%204\/"
+    }
+  ],
+  "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course Information\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Course%20Information\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

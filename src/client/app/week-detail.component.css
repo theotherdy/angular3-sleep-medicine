@@ -1,0 +1,15 @@
+.thumbnail {
+  text-align: center;
+  border: none;
+  margin: 0;
+}
+div.learning-objectives {
+  text-align: left;
+}
+
+li.resources-list {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

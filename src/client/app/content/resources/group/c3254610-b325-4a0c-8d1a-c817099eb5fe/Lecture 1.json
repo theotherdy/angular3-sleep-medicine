@@ -1,0 +1,76 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1469732935320,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1469732935322,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Lecture 1",
+  "priority": "5",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/",
+  "resourceChildren": [
+    {
+      "created": 1468848168418,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "text\/plain",
+      "modified": 1469732650205,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Lecture 1 reading list",
+      "priority": "268435457",
+      "properties": {
+        "DAV:paper": "",
+        "CITATIONS:managinglibrary": "-1",
+        "DAV:department": "",
+        "sakai:reference-root": "\/citation",
+        "DAV:coursename": "",
+        "DAV:term": "",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": "",
+        "DAV:academicyear": ""
+      },
+      "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/Seminar",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/Seminar",
+      "size": "36",
+      "type": "org.sakaiproject.citation.impl.CitationList",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture%201\/Seminar"
+    },
+    {
+      "created": 1469733072099,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1469733072106,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "LPConsultationBooklet.pdf",
+      "priority": "268435458",
+      "properties": {
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/LPConsultationBooklet.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/LPConsultationBooklet.pdf",
+      "size": "854689",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture%201\/LPConsultationBooklet.pdf"
+    }
+  ],
+  "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture 1\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lecture%201\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

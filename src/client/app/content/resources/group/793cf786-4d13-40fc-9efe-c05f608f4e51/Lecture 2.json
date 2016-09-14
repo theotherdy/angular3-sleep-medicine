@@ -1,0 +1,74 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1469732945239,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1469809018955,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Lecture 2",
+  "priority": "6",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/",
+  "resourceChildren": [
+    {
+      "created": 1469732710855,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": null,
+      "hidden": false,
+      "mimeType": "text\/plain",
+      "modified": 1469809019655,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Lecture 2 reading list",
+      "priority": "268435458",
+      "properties": {
+        "DAV:paper": "",
+        "sakai:reference-root": "\/citation",
+        "CITATIONS:managinglibrary": "HCLBL",
+        "DAV:department": "",
+        "DAV:coursename": "",
+        "DAV:term": "",
+        "DAV:academicyear": ""
+      },
+      "reference": "\/citation\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/Lecture 2 reading list",
+      "resourceChildren": [],
+      "resourceId": "\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/Lecture 2 reading list",
+      "size": "36",
+      "type": "org.sakaiproject.citation.impl.CitationList",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture%202\/Lecture%202%20reading%20list"
+    },
+    {
+      "created": 1469733112530,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1469809019779,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "pp_eton_np_designation_application.pdf",
+      "priority": "268435458",
+      "properties": {
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/pp_eton_np_designation_application.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/pp_eton_np_designation_application.pdf",
+      "size": "821024",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture%202\/pp_eton_np_designation_application.pdf"
+    }
+  ],
+  "resourceId": "\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture 2\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/793cf786-4d13-40fc-9efe-c05f608f4e51\/Lecture%202\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

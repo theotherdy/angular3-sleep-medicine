@@ -1,0 +1,22 @@
+{
+  "redirects": [],
+  "siteId": "a20b83f9-4d3a-4e99-b0c2-849c849f2187",
+  "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/mod_1",
+  "subsites": [
+    {
+      "redirects": null,
+      "siteId": "45409ad9-b670-445d-becf-3e5360ac5db6",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/mod_1\/mod-1-week2",
+      "subsites": null
+    },
+    {
+      "redirects": null,
+      "siteId": "c3254610-b325-4a0c-8d1a-c817099eb5fe",
+      "siteUrl": "https:\/\/weblearn.ox.ac.uk\/portal\/hierarchy\/medsci\/p_g\/sleep_med\/mod_1\/mod-1-week1",
+      "subsites": null
+    }
+  ],
+  "entityReference": "\/portal-hierarchy",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/portal-hierarchy",
+  "entityTitle": "site"
+}
