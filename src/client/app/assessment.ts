@@ -1,11 +1,10 @@
 /**
- * Represents a Questionmark Perception assessment, linked to from within a Modyule lesson.
+ * Represents a summative assessment information and links.
  *
  */
 
+import { AssessmentItem } from './assessment-item';
+
 export class Assessment {
-    id: string;
-    title: string;
-    description: string;
-    url: string;
+    assessmentItems: AssessmentItem[];
 }

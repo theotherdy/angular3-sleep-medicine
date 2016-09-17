@@ -37,7 +37,7 @@ export class ModyuleResourceComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.modyuleResourcesObservable = this.modyuleService.getModyuleLesson(this.modyule)
+        this.modyuleResourcesObservable = this.modyuleService.getModyuleLectures(this.modyule)
             .map(modyule => {
                 this.modyule.supplementaryLectures = modyule.supplementaryLectures;
                 //console.log(modyule);

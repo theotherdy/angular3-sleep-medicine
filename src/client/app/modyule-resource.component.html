@@ -1,7 +1,8 @@
 <div class="list-group">
     <div *ngFor="let lecture of ((modyuleResourcesObservable | async)?.supplementaryLectures)" class="list-group-item">
         <!--a href="{{lecture.url}}" target="_blank" *ngFor="let lecture of ((lecturesObservable | async)?.lectures)" class="list-group-item"-->
-        <a href="https://www.weblearn.ox.ac.uk{{lecture.url}}" target="_blank" >
+        <!--a href="https://www.weblearn.ox.ac.uk{{lecture.url}}" target="_blank" -->
+        <a href="{{lecture.url}}" target="_blank" >
         <!--a href="{{lecture.url}}" target="_blank" *ngFor="let lecture of (week.lectures)" class="list-group-item"-->
         <!--ref="{{lecture?.url}}" target="_blank" *ngFor="let lecture of (week?.lectures | lectureType: 'main')" class="list-group-item"-->
             <h4 class="list-group-item-heading"><fa [name]="'video-camera'"></fa> {{lecture.name}}</h4>

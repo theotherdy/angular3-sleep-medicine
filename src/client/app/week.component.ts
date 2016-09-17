@@ -10,12 +10,13 @@ import { Modyule } from './modyule';
 import { Week } from './week';
 import { WeekService } from './week.service';
 import { WeekDetailComponent } from './week-detail.component';
+import { ModyuleEndComponent } from './modyule-end.component';
 
 @Component({
     moduleId: module.id,
     selector: 'weeks-component',
     templateUrl: 'week.component.html',
-    directives: [WeekDetailComponent,TAB_DIRECTIVES, CORE_DIRECTIVES,FaComponent],
+    directives: [ModyuleEndComponent,WeekDetailComponent,TAB_DIRECTIVES, CORE_DIRECTIVES,FaComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls:  ['week.component.css'],
     providers: [WeekService]

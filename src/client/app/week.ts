@@ -6,7 +6,7 @@ import { Modyule } from './modyule';
 export class Week {
     siteId: string;
     siteUrl: string;
-    lessonUrl: string;
+    //weekUrl: string;  //end of url to this week's resources
     startDate: Date;
     endDate: Date;
     name: string;
@@ -16,5 +16,5 @@ export class Week {
     modyule: Modyule;
 
     lectures: Lecture[];
-    seminars: Seminar[];
+    seminar: Seminar;
 }

@@ -13,6 +13,13 @@
             (deselect)="week.active = false">
             <week-detail-component [week]="week"></week-detail-component>
         </tab>
+        <tab
+            [heading]="modyule.endOfModuleTitle"
+            [active]="modyule.endOfModuleTabActive"
+            (select)="modyule.endOfModuleTabActive = true"
+            (deselect)="modyule.endOfModuleTabActive = false">
+            <modyule-end-component [modyule]="modyule"></modyule-end-component>
+        </tab>
     </tabset>
 </div>
 <div class="visible-xs">

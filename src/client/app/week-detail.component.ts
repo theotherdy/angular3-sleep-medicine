@@ -13,12 +13,13 @@ import { DescriptionFormatterPipe } from './description-formatter.pipe';
 import { WeekService } from './week.service';
 
 import { ModyuleResourceComponent } from './modyule-resource.component';
+import { ResourceComponent } from './resource.component';
 
 @Component({
     moduleId: module.id,
     selector: 'week-detail-component',
     templateUrl: 'week-detail.component.html',
-    directives: [ModyuleResourceComponent,FaComponent,ACCORDION_DIRECTIVES,CollapseDirective],
+    directives: [ResourceComponent,ModyuleResourceComponent,FaComponent,ACCORDION_DIRECTIVES,CollapseDirective],
     styleUrls:  ['week-detail.component.css'],
     pipes: [LectureTypePipe, DescriptionFormatterPipe],
     providers: [WeekService]
@@ -39,23 +40,28 @@ export class WeekDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.lecturesObservable = this.weekService.getWeekLesson(this.week)
+        this.lecturesObservable = this.weekService.getWeekLectures(this.week)
             .map(week => {
                 this.week.lectures = week.lectures;
-                this.week.seminars = week.seminars;
-                //console.log(week);
-                return week;
+                return this.week;
             })
-            .switchMap(week => this.weekService.getLecturesDetails(this.week))
+            .switchMap(week => this.weekService.getWeekSeminar(this.week))
+            .map(week => {
+                this.week.seminar = week.seminar;
+                return this.week;
+            })
+            .switchMap(week => this.weekService.getLectureLearningOutcomes(this.week))
             .map(week => {
                 this.week.lectures = week.lectures;
-                return week;
+                return this.week;
             })
-            .switchMap(week => this.weekService.getSeminarsDetails(this.week))
+            //.expand(week => ((this.week.seminar.learningOutcomes === undefined && this.week.seminar.learningOutcomesUrl !== undefined) ? this.weekService.getSeminarLearningOutcomes(this.week): Observable.empty()))
+            .switchMap(week => this.weekService.getSeminarLearningOutcomes(this.week))
             .map(week => {
-                this.week.seminars = week.seminars;
-                return week;
+                this.week.seminar.learningOutcomes = week.seminar.learningOutcomes;
+                return this.week;
             });
+        console.log(this.lecturesObservable);
             /*.subscribe(
                 week => {
                     this.week.lectures = week.lectures;

@@ -5,6 +5,8 @@ import { Modyule } from './modyule';
 import { Observable }     from 'rxjs/Observable';
 import { Subject }     from 'rxjs/Subject';
 import { Lecture } from './lecture';
+import { Assessment } from './assessment';
+import { Feedback } from './feedback';
 //import { Resource } from './resource';
 
 import './rxjs-operators';  // Add the RxJS Observable operators we need in this app.
@@ -35,15 +37,16 @@ export class ModyuleService {
 
         for (let modyule of modyules){
             let urlToGet: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
-            urlToGet = urlToGet + myGlobals.lessonsUrl + modyule.siteId + '.json';
+            //urlToGet = urlToGet + myGlobals.lessonsUrl + modyule.siteId + '.json'; //old lessons
+            urlToGet = urlToGet + myGlobals.contentUrl + modyule.siteId + '.json?depth=3';
             calls.push(
                 this.http.get(urlToGet).cache()
                 );
-            urlToGet = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
-            urlToGet = urlToGet + myGlobals.contentUrl + modyule.siteId + '.json';
-            calls.push(
-                this.http.get(urlToGet).cache()
-                );
+            //urlToGet = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
+            //urlToGet = urlToGet + myGlobals.contentUrl + modyule.siteId + '.json';
+            //calls.push(
+                //this.http.get(urlToGet).cache()
+                //);
         }
 
         var subject = new Subject<Modyule[]>();       //see: http://stackoverflow.com/a/38668416/2235210 for why Subject
@@ -57,18 +60,14 @@ export class ModyuleService {
                     return response.url.indexOf(modyule.siteId)!==-1;
                 });
                 let bodyAsJson = JSON.parse(response._body);
-                if(response.url.indexOf(myGlobals.lessonsUrl)!==-1) { //getting lessons
-                    foundModyule.name = bodyAsJson.lessons_collection[0].lessonTitle;
-                    foundModyule.lessonUrl = bodyAsJson.lessons_collection[0].contentsURL;
-                    //foundModyule.name = bodyAsJson.lessons_collection[0].lessonTitle;
-                } else if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
+                if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
                     //find folder caled Start date and get the date from its description
                     let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
                         return folder.name.toLowerCase() === 'start date';
                     });
                     foundModyule.startDate = new Date(startFolder.description);
+                    foundModyule.name = bodyAsJson.content_collection[0].name;
                 }
-                //console.log(foundModyule)
             }
             subject.next(modyules);
         });
@@ -77,16 +76,27 @@ export class ModyuleService {
     }
 
     /**
-    * For modyules-resources component to get details of the materials inside it
+    * For modyules-resources component to get details of the supplementary lectures and any resources it contains
     */
-
-    getModyuleLesson(modyule: Modyule): Observable<Modyule> {
-        let lessonUrl = modyule.lessonUrl.replace(myGlobals.unneededPartOfUrlForLessonCalls, '');
-        return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + lessonUrl + '.json')
-            //.cache()
-            .map(this.processLessons)
-            .catch(this.handleError);
-        }
+    getModyuleLectures(modyule: Modyule): Observable<Modyule> {
+            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/Lectures.json?depth=3';
+            return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + resourceUrl)
+                //.cache()
+                .map(this.processLectures)
+                .catch(this.handleError);
+            }
+    /**
+    * For modyules-resources component to get details of End of module assessments and feedback
+    */
+    getModyuleEnd(modyule: Modyule): Observable<Modyule> {
+            //let lessonUrl = modyule.lessonUrl.replace(myGlobals.unneededPartOfUrlForLessonCalls, '');
+            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/End%20of%20module.json?depth=3';
+            //urlToGet = urlToGet + myGlobals.contentUrl + modyule.siteId + '/Lectures.json?depth=3';
+            return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + resourceUrl)
+                //.cache()
+                .map(this.processEnd)
+                .catch(this.handleError);
+            }
 
     private initialiseModyules(res: Response) {
         let body = res.json();
@@ -102,45 +112,68 @@ export class ModyuleService {
         return modyulesToReturn;
     }
 
-    private processLessons(res: Response) {
+    private processLectures(res: Response) {
         let modyuleToReturn: Modyule = new Modyule;
         let body = res.json();
         //first deal with lectures
-        let lecturesPage = body.contentsList.find((subPage:any)=> {
-            return subPage.name.toLowerCase() === 'lectures';
-            });
+        let lecture: Lecture;
         modyuleToReturn.supplementaryLectures = new Array<Lecture>();
-        for(let lectureData of lecturesPage.contentsList) {
-            let lecture: Lecture = new Lecture;
-            lecture.type = 'main'; //because it's within a week
-            lecture.name = lectureData.name;
-            lecture.id = lectureData.id;
-            for (let lectureDetail of lectureData.contentsList) {
-                if(lectureDetail.name.toLowerCase()==='lecture link') {
-                    lecture.url = lectureDetail.url;
-                } else if (lectureDetail.name.toLowerCase()==='learning outcomes') {
-                    lecture.learningOutcomesUrl = lectureDetail.contentsURL;
-                } else if (lectureDetail.type === 5) {
-                    if(lectureDetail.html.indexOf('data-directory')===-1) {
-                        //standard html text content - assuming the lecture description
-                        lecture.description = lectureDetail.html;
-                    } else {
-                        //link to a resources folder
-                        //extract the url from the .html property:
-                        //data-directory='\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/\/Lecture 1\/'
-                        let posDataDirectory = lectureDetail.html.indexOf('data-directory');
-                        let posFirstApostrophe = lectureDetail.html.indexOf('\'',posDataDirectory);
-                        let posLastApostrophe = lectureDetail.html.indexOf('\'',posFirstApostrophe+1);
-                        lecture.resourcesUrl = lectureDetail.html.substr(posFirstApostrophe+1,posLastApostrophe-posFirstApostrophe-1);
-                        if(lecture.resourcesUrl.charAt(lecture.resourcesUrl.length - 1)==='/') {  //to remove final '/' if present
-                            lecture.resourcesUrl = lecture.resourcesUrl.substring(0, lecture.resourcesUrl.length - 1);
-                        }
+        for(let lectureData of body.content_collection[0].resourceChildren) {
+            if (lectureData.type === 'org.sakaiproject.content.types.folder') { //it's a folder
+                lecture = new Lecture;
+                lecture.name = lectureData.name;
+                lecture.id = lectureData.resourceId;
+                lecture.description = lectureData.description;
+                for (let lectureDetail of lectureData.resourceChildren) {
+                    if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                        lecture.url = lectureDetail.url;
+                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder' && lectureDetail.name.toLowerCase()==='Resources') {
+                        //get it intpo the right format for passing to resource-component
+                        let trimmedResourceId = lectureDetail.resourceId.substring(0, lectureDetail.resourceId.length - 1);
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
+                        lecture.resourcesUrl = resourceUrl;
                     }
                 }
             }
         modyuleToReturn.supplementaryLectures.push(lecture);
         }
+        return modyuleToReturn;
+    }
 
+    private processEnd(res: Response) {
+        let modyuleToReturn: Modyule = new Modyule;
+        let body = res.json();
+        let assessment: Assessment;
+        modyuleToReturn.assessments = new Array<Assessment>();
+        let assessmentFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
+            return folder.name.toLowerCase() === 'mcqs' && folder.type === 'org.sakaiproject.content.types.folder';
+        });
+        modyuleToReturn.assessmentsDescription = assessmentFolder.description;
+        for(let assessmentData of assessmentFolder.resourceChildren) {
+            if (assessmentData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                assessment = new Assessment;
+                assessment.name = assessmentData.name;
+                assessment.id = assessmentData.resourceId;
+                assessment.description = assessmentData.description;
+                assessment.url = assessmentData.url;
+            }
+            modyuleToReturn.assessments.push(assessment);
+        }
+        let feedback: Feedback;
+        let feedbackFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
+            return folder.name.toLowerCase() === 'feedback' && folder.type === 'org.sakaiproject.content.types.folder';
+        });
+        modyuleToReturn.feedbackDescription = feedbackFolder.description;
+        for(let feedbackData of feedbackFolder.resourceChildren) {
+            if (feedbackData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                modyuleToReturn.feedback = new Feedback;
+                modyuleToReturn.feedback.name = feedbackData.name;
+                modyuleToReturn.feedback.id = feedbackData.resourceId;
+                modyuleToReturn.feedback.description = feedbackData.description;
+                modyuleToReturn.feedback.url = feedbackData.url;
+            }
+        }
         return modyuleToReturn;
     }
 

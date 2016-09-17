@@ -16,6 +16,7 @@ export let unneededPartOfUrlForHierarchyCalls: Array<string> = [];
 unneededPartOfUrlForHierarchyCalls[0] = 'https://weblearn.ox.ac.uk/portal/hierarchy';
 unneededPartOfUrlForHierarchyCalls[1] = 'https://weblearn.ox.ac.uk/portal/site';
 export let unneededPartOfUrlForLessonCalls: string = 'https://weblearn.ox.ac.uk/direct/';
+export let unneededPartOfUrlForLOCalls: string = '/group/';
 export let courseInfoUrl: string = 'd1506490-a468-46ca-a915-417d9d11be2f/Course%20Information';
 export let baseSitePath: string = '/medsci/p_g/sleep_med'; //same in WL
 
@@ -27,3 +28,4 @@ export let suffixForTestingOnly: Array<string> = ['.json', ''];
 export let lessonsUrl: string = 'lessons/site/'; //same in WL
 export let lessonUrl: string = 'lessons/lesson/'; //same in WL
 export let contentUrl: string = 'content/resources/group/'; //same in WL
+export let accessUrl: string = 'access/resources/group/'; //same in WL

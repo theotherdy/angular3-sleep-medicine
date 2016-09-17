@@ -3,15 +3,30 @@ import { Component, OnInit } from '@angular/core';
 
 import { ModyuleComponent } from './modyule.component';
 import { ResourceComponent } from './resource.component';
+import { AssessmentComponent } from './assessment.component';
 
 import myGlobals = require('./globals');
 
 @Component({
     selector: 'my-app',
     template: `
-        <!--h1>{{title}}</h1-->
         <modyules-component></modyules-component>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Course information</a>
+                </div>
+            </div>
+        </nav>
         <resource-component [resourcesUrl] = "resourcesUrl"></resource-component>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Assessment</a>
+                </div>
+            </div>
+        </nav>
+        <assessment-component [assessmentUrl] = "assessmentUrl"></assessment-component>
         `,
     directives: [ModyuleComponent, ResourceComponent],
     //directives: [ROUTER_DIRECTIVES],

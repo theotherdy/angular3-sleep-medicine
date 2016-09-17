@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 //import 'rxjs/add/operator/zip';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/expand';
 import 'rxjs/add/operator/cache';
 //import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/observable/forkJoin';
