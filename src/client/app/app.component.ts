@@ -28,7 +28,7 @@ import myGlobals = require('./globals');
         </nav>
         <assessment-component [assessmentUrl] = "assessmentUrl"></assessment-component>
         `,
-    directives: [ModyuleComponent, ResourceComponent],
+    directives: [AssessmentComponent, ModyuleComponent, ResourceComponent]
     //directives: [ROUTER_DIRECTIVES],
     //providers: [
     //  ROUTER_PROVIDERS
@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
     title = 'Sleep Medicine';
     ebBase = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
     resourcesUrl = this.ebBase + myGlobals.contentUrl + myGlobals.courseInfoUrl + '.json?depth=3';
+    assessmentUrl = this.ebBase + myGlobals.contentUrl + myGlobals.assessmentInfoUrl + '.json?depth=3';
 
     ngOnInit() {
         let rhColumn = window.parent.document.getElementById('col2of2');

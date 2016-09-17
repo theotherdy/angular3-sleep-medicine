@@ -92,11 +92,11 @@ export class WeekService {
             .catch(this.handleError);
         }
 
-    getWeekSeminar(week: Week): Observable<Week> {
-        let seminarUrl = myGlobals.contentUrl + week.siteId + '/Seminar.json?depth=3';
-        return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + seminarUrl)
+    getWeekSeminars(week: Week): Observable<Week> {
+        let seminarsUrl = myGlobals.contentUrl + week.siteId + '/Seminars.json?depth=3';
+        return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + seminarsUrl)
             //.cache()
-            .map(this.processSeminar)
+            .map(this.processSeminars)
             .catch(this.handleError);
         }
 
@@ -130,27 +130,36 @@ export class WeekService {
         return subject;
     }
 
-    getSeminarLearningOutcomes (week:Week): Observable<any> {
-        if(week.seminar.learningOutcomesUrl !== undefined) {
-            let seminarLOUrl = week.seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-            seminarLOUrl = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + seminarLOUrl;
-            return this.http.get(seminarLOUrl)
-                .map(this.extractSeminarLOs)
-                .catch(this.handleError);
-        } else {
-            //let observableWeek: Observable<Week>;
-            return Observable.empty();
+    getSeminarLearningOutcomes (week:Week): Observable<Week> {
+        let calls: any[]  = [];
+
+        for (let seminar of week.seminars) {
+            if(seminar.learningOutcomesUrl !== undefined && seminar.learningOutcomes===undefined) {
+                let seminarLOUrl = seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
+                seminarLOUrl = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + seminarLOUrl;
+                calls.push(  //learning outcomes
+                    this.http.get(seminarLOUrl)//.cache()
+                    );
             }
         }
 
-    private extractSeminarLOs (res: any){
-        let weekToReturn = new Week;
-        let seminarToReturn = new Seminar;
-        let body = res._body;
-        seminarToReturn.learningOutcomes = body;
-        weekToReturn.seminar = seminarToReturn;
-        return weekToReturn;
-    }
+        var subject = new Subject<Week>();  //see: http://stackoverflow.com/a/38668416/2235210 for why Subject
+
+        Observable.forkJoin(calls).subscribe((res: any) => {
+            for (let response of res){
+                let body = response._body;
+                let foundSeminar = week.seminars.find(seminar=> {
+                    let LOUrl = encodeURI(seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, ''));
+                    return response.url.indexOf(LOUrl)!==-1;
+                });
+                foundSeminar.learningOutcomes = body;
+            }
+            subject.next(week);
+        });
+
+        return subject;
+
+        }
 
     private initialiseWeeks(res: Response) {
         let body = res.json();
@@ -200,37 +209,36 @@ export class WeekService {
         return weekToReturn;
     }
 
-    private processSeminar(res: Response) {
+    private processSeminars(res: Response) {
         let weekToReturn: Week = new Week;
         let body = res.json();
-
+        weekToReturn.seminars = new Array<Seminar>();
         let seminar: Seminar = new Seminar;
-
-        //weekToReturn.seminar = new Array<Seminar>();
-        let seminarData = body.content_collection[0];
-        if (seminarData.type === 'org.sakaiproject.content.types.folder' && seminarData.name.toLowerCase()==='seminar') { //it's a folder
-            seminar.id = seminarData.resourceId;
-            //seminar.name = seminarData.name;
-            seminar.description = seminarData.description;
-            seminar.seminarInstances = new Array<SeminarInstance>();
-            for (let seminarDetail of seminarData.resourceChildren) {
-                if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
-                    let seminarInstance: SeminarInstance =  new SeminarInstance;
-                    seminarInstance.url = seminarDetail.url;
-                    seminarInstance.description = seminarDetail.description;
-                    seminarInstance.name = seminarDetail.name;
-                    seminar.seminarInstances.push(seminarInstance);
-                } else if(seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
-                    seminar.learningOutcomesUrl = seminarDetail.resourceId;
-                } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder' && seminarDetail.name.toLowerCase()==='resources') {
-                    let trimmedResourceId = seminarDetail.resourceId.substring(0, seminarDetail.resourceId.length - 1);
-                    trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                    let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
-                    seminar.resourcesUrl = resourceUrl;
+        for(let seminarData of body.content_collection[0].resourceChildren) {
+            if (seminarData.type === 'org.sakaiproject.content.types.folder') { //it's a folder
+                seminar.id = seminarData.resourceId;
+                //seminar.name = seminarData.name;
+                seminar.description = seminarData.description;
+                seminar.seminarInstances = new Array<SeminarInstance>();
+                for (let seminarDetail of seminarData.resourceChildren) {
+                    if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
+                        let seminarInstance: SeminarInstance =  new SeminarInstance;
+                        seminarInstance.url = seminarDetail.url;
+                        seminarInstance.description = seminarDetail.description;
+                        seminarInstance.name = seminarDetail.name;
+                        seminar.seminarInstances.push(seminarInstance);
+                    } else if(seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
+                        seminar.learningOutcomesUrl = seminarDetail.resourceId;
+                    } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder' && seminarDetail.name.toLowerCase()==='resources') {
+                        let trimmedResourceId = seminarDetail.resourceId.substring(0, seminarDetail.resourceId.length - 1);
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
+                        seminar.resourcesUrl = resourceUrl;
+                    }
                 }
             }
+            weekToReturn.seminars.push(seminar);
         }
-        weekToReturn.seminar = seminar;
         return weekToReturn;
     }
 

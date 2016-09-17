@@ -16,5 +16,5 @@ export class Week {
     modyule: Modyule;
 
     lectures: Lecture[];
-    seminar: Seminar;
+    seminars: Seminar[];
 }

@@ -127,7 +127,7 @@ export class ModyuleService {
                 for (let lectureDetail of lectureData.resourceChildren) {
                     if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
                         lecture.url = lectureDetail.url;
-                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder' && lectureDetail.name.toLowerCase()==='Resources') {
+                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder' && lectureDetail.name.toLowerCase()==='resources') {
                         //get it intpo the right format for passing to resource-component
                         let trimmedResourceId = lectureDetail.resourceId.substring(0, lectureDetail.resourceId.length - 1);
                         trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');

@@ -18,6 +18,7 @@ unneededPartOfUrlForHierarchyCalls[1] = 'https://weblearn.ox.ac.uk/portal/site';
 export let unneededPartOfUrlForLessonCalls: string = 'https://weblearn.ox.ac.uk/direct/';
 export let unneededPartOfUrlForLOCalls: string = '/group/';
 export let courseInfoUrl: string = 'd1506490-a468-46ca-a915-417d9d11be2f/Course%20Information';
+export let assessmentInfoUrl: string = 'd1506490-a468-46ca-a915-417d9d11be2f/Assessment';
 export let baseSitePath: string = '/medsci/p_g/sleep_med'; //same in WL
 
 //export let urlToSpecifyPortal: string = 'portal-hierarchy'; //in WL = 'portal-hierarchy/site.json?portalpath='

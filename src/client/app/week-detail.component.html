@@ -38,7 +38,29 @@
                 <div>
                     <h3>SEMINAR</h3>
                     <div class="list-group">
-                        <div class="list-group-item">
+                        <div *ngFor="let seminar of ((lecturesObservable | async)?.seminars)" class="list-group-item">
+                            <h4 class="list-group-item-heading"><fa [name]="'sign-in'"></fa> {{seminar.name}}</h4>
+                            <p class="list-group-item-text" [innerHTML]="seminar.description | descriptionFormatter"></p>
+                            <strong><p class="list-group-item-text" [innerHTML]="seminar.description | descriptionFormatter: 'lecturer'"></p></strong>
+                            <accordion [closeOthers]="true">
+                                <accordion-group heading="Sessions">
+                                    <div class="list-group">
+                                        <div *ngFor="let seminarInstance of seminar.seminarInstances" class="list-group-item">
+                                            <a href="{{seminarInstance.url}}"><fa [name]="'clock-o'"></fa> {{seminarInstance.name}}</a>
+                                            <strong><p class="list-group-item-text" [innerHTML]="seminarInstance.description | descriptionFormatter: 'lecturer'"></p></strong>
+                                        </div>
+                                    </div>
+                                </accordion-group>
+                                <accordion-group *ngIf="seminar.learningOutcomes" heading="Learning objectives">
+                                    <div class="learning-objectives" [innerHTML]="seminar.learningOutcomes"></div>
+                                </accordion-group>
+                                <accordion-group *ngIf="seminar.resourcesUrl" heading="Resources">
+                                    <resource-component [resourcesUrl] = "seminar.resourcesUrl"></resource-component>
+                                </accordion-group>
+                            </accordion>
+                        </div>
+
+                        <!--div class="list-group-item">
                             <h4 class="list-group-item-heading"><fa [name]="'sign-in'"></fa> Seminar</h4>
                             <p class="list-group-item-text" [innerHTML]="(lecturesObservable | async)?.seminar?.description | descriptionFormatter"></p>
                             <strong><p class="list-group-item-text" [innerHTML]="(lecturesObservable | async)?.seminar?.description | descriptionFormatter: 'lecturer'"></p></strong>
@@ -58,7 +80,7 @@
                                     <resource-component [resourcesUrl] = "(lecturesObservable | async)?.seminar?.resourcesUrl"></resource-component>
                                 </accordion-group>
                             </accordion>
-                        </div>
+                        </div-->
                     </div>
                 </div>
             </div>
