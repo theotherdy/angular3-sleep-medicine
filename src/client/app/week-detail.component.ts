@@ -55,7 +55,6 @@ export class WeekDetailComponent implements OnInit {
                 this.week.lectures = week.lectures;
                 return this.week;
             })
-            //.expand(week => ((this.week.seminar.learningOutcomes === undefined && this.week.seminar.learningOutcomesUrl !== undefined) ? this.weekService.getSeminarLearningOutcomes(this.week): Observable.empty()))
             .switchMap(week => this.weekService.getSeminarLearningOutcomes(this.week))
             .map(week => {
                 this.week.seminars = week.seminars;

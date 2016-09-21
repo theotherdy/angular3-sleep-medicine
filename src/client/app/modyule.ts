@@ -1,6 +1,6 @@
 import { Week } from './week';
 import { Lecture } from './lecture';
-import { Assessment } from './assessment';
+import { Mcq } from './mcq';
 import { Feedback } from './feedback';
 
 export class Modyule {  //'Module' is reserved keyword
@@ -17,10 +17,10 @@ export class Modyule {  //'Module' is reserved keyword
     endOfModuleTabActive: boolean = false;
 
     feedbackDescription: string;  //for container for feedback links
-    assessmentsDescription: string;  //for container for assessment links
+    mcqsDescription: string;  //for container for assessment links
 
     weeks: Week[];
     supplementaryLectures: Lecture[];  //letures where type = supplementary
-    assessments: Assessment[];
+    mcqs: Mcq[];
     feedback: Feedback;
 }

@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="thumbnail">
-            <div class="image hidden-xs"><fa [name]="'film'" [size]=5></fa></div>
+            <div class="image hidden-xs scni-blue"><fa [name]="'film'" [size]=5></fa></div>
             <div class="caption">
                 <div>
                     <h3>LECTURE(S)</h3>
@@ -17,6 +17,7 @@
                                 <p class="list-group-item-text" [innerHTML]="lecture.description | descriptionFormatter"></p>
                                 <strong><p class="list-group-item-text" [innerHTML]="lecture.description | descriptionFormatter: 'lecturer'"></p></strong>
                             </a>
+                            <a href="{{lecture.feedback.url}}" target="_blank" ><fa [name]="'comment-o'"></fa> {{lecture.feedback.name}}</a>
                             <accordion [closeOthers]="true">
                                 <accordion-group *ngIf="lecture.learningOutcomes" heading="Learning objectives">
                                     <div class="learning-objectives" [innerHTML]="lecture.learningOutcomes"></div>
@@ -33,10 +34,10 @@
     </div>
     <div class="col-sm-4">
         <div class="thumbnail">
-            <div class="image hidden-xs"><fa [name]="'users'" [size]=5></fa></div>
+            <div class="image hidden-xs scni-blue"><fa [name]="'users'" [size]=5></fa></div>
             <div class="caption">
                 <div>
-                    <h3>SEMINAR</h3>
+                    <h3>GROUP DISCUSSION</h3>
                     <div class="list-group">
                         <div *ngFor="let seminar of ((lecturesObservable | async)?.seminars)" class="list-group-item">
                             <h4 class="list-group-item-heading"><fa [name]="'sign-in'"></fa> {{seminar.name}}</h4>
@@ -88,7 +89,7 @@
     </div>
     <div class="col-sm-4">
         <div class="thumbnail">
-            <div class="image hidden-xs"><fa [name]="'forward'" [size]=5></fa></div>
+            <div class="image hidden-xs scni-blue"><fa [name]="'forward'" [size]=5></fa></div>
             <div class="caption">
                 <div>
                     <h3>SUPPLEMENTARY</h3>

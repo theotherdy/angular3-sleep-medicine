@@ -5,7 +5,7 @@ import { Modyule } from './modyule';
 import { Observable }     from 'rxjs/Observable';
 import { Subject }     from 'rxjs/Subject';
 import { Lecture } from './lecture';
-import { Assessment } from './assessment';
+import { Mcq } from './mcq';
 import { Feedback } from './feedback';
 //import { Resource } from './resource';
 
@@ -127,11 +127,13 @@ export class ModyuleService {
                 for (let lectureDetail of lectureData.resourceChildren) {
                     if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
                         lecture.url = lectureDetail.url;
-                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder' && lectureDetail.name.toLowerCase()==='resources') {
+                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder'
+                                && lectureDetail.name.toLowerCase()==='resources') {
                         //get it intpo the right format for passing to resource-component
                         let trimmedResourceId = lectureDetail.resourceId.substring(0, lectureDetail.resourceId.length - 1);
-                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');//remove group
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
+                        resourceUrl = resourceUrl + trimmedResourceId + '.json';
                         lecture.resourcesUrl = resourceUrl;
                     }
                 }
@@ -144,23 +146,23 @@ export class ModyuleService {
     private processEnd(res: Response) {
         let modyuleToReturn: Modyule = new Modyule;
         let body = res.json();
-        let assessment: Assessment;
-        modyuleToReturn.assessments = new Array<Assessment>();
-        let assessmentFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
+        let mcq: Mcq;
+        modyuleToReturn.mcqs = new Array<Mcq>();
+        let mcqFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
             return folder.name.toLowerCase() === 'mcqs' && folder.type === 'org.sakaiproject.content.types.folder';
         });
-        modyuleToReturn.assessmentsDescription = assessmentFolder.description;
-        for(let assessmentData of assessmentFolder.resourceChildren) {
-            if (assessmentData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
-                assessment = new Assessment;
-                assessment.name = assessmentData.name;
-                assessment.id = assessmentData.resourceId;
-                assessment.description = assessmentData.description;
-                assessment.url = assessmentData.url;
+        modyuleToReturn.mcqsDescription = mcqFolder.description;
+        for(let mcqData of mcqFolder.resourceChildren) {
+            if (mcqData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                mcq = new Mcq;
+                mcq.name = mcqData.name;
+                mcq.id = mcqData.resourceId;
+                mcq.description = mcqData.description;
+                mcq.url = mcqData.url;
             }
-            modyuleToReturn.assessments.push(assessment);
+            modyuleToReturn.mcqs.push(mcq);
         }
-        let feedback: Feedback;
+        //let feedback: Feedback;
         let feedbackFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
             return folder.name.toLowerCase() === 'feedback' && folder.type === 'org.sakaiproject.content.types.folder';
         });

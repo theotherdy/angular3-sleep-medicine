@@ -5,7 +5,7 @@ import { Week } from './week';
 import { Lecture } from './lecture';
 import { Seminar } from './seminar';
 import { SeminarInstance } from './seminar-instance';
-import { Resource } from './resource';
+//import { Resource } from './resource';
 import { Feedback } from './feedback';
 import { Observable }     from 'rxjs/Observable';
 import { Subject }     from 'rxjs/Subject';
@@ -106,7 +106,7 @@ export class WeekService {
         for (let lecture of week.lectures) {
             if(lecture.learningOutcomesUrl !== undefined && lecture.learningOutcomes===undefined) {
                 let lectureLOUrl = lecture.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                lectureLOUrl = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + lectureLOUrl;
+                lectureLOUrl = myGlobals.baseUrlforLOs[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + lectureLOUrl;
                 calls.push(  //learning outcomes
                     this.http.get(lectureLOUrl)//.cache()
                     );
@@ -122,7 +122,16 @@ export class WeekService {
                     let lessonUrl = encodeURI(lecture.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, ''));
                     return response.url.indexOf(lessonUrl)!==-1;
                 });
-                foundLecture.learningOutcomes = body;
+                //extract contents of body tag (if present) from .html
+                let bEnd: number;
+                let bStart: number;
+                bStart = body.indexOf('<body');
+                bEnd = body.indexOf('</body');
+                if(bStart !== -1 && bEnd !== -1) {
+                    foundLecture.learningOutcomes = body.slice(bStart, bEnd);
+                } else {
+                    foundLecture.learningOutcomes = body;
+                }
             }
             subject.next(week);
         });
@@ -136,7 +145,7 @@ export class WeekService {
         for (let seminar of week.seminars) {
             if(seminar.learningOutcomesUrl !== undefined && seminar.learningOutcomes===undefined) {
                 let seminarLOUrl = seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                seminarLOUrl = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + seminarLOUrl;
+                seminarLOUrl = myGlobals.baseUrlforLOs[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + seminarLOUrl;
                 calls.push(  //learning outcomes
                     this.http.get(seminarLOUrl)//.cache()
                     );
@@ -152,7 +161,16 @@ export class WeekService {
                     let LOUrl = encodeURI(seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, ''));
                     return response.url.indexOf(LOUrl)!==-1;
                 });
-                foundSeminar.learningOutcomes = body;
+                //extract contents of body tag (if present) from .html
+                let bEnd: number;
+                let bStart: number;
+                bStart = body.indexOf('<body');
+                bEnd = body.indexOf('</body');
+                if(bStart !== -1 && bEnd !== -1) {
+                    foundSeminar.learningOutcomes = body.slice(bStart, bEnd);
+                } else {
+                    foundSeminar.learningOutcomes = body;
+                }
             }
             subject.next(week);
         });
@@ -179,7 +197,7 @@ export class WeekService {
         let weekToReturn: Week = new Week;
         let body = res.json();
         weekToReturn.lectures = new Array<Lecture>();
-        let lecture: Lecture
+        let lecture: Lecture;
         for(let lectureData of body.content_collection[0].resourceChildren) {
             if (lectureData.type === 'org.sakaiproject.content.types.folder') { //it's a folder
                 lecture = new Lecture;
@@ -188,17 +206,23 @@ export class WeekService {
                 lecture.id = lectureData.resourceId;
                 lecture.description = lectureData.description;
                 for (let lectureDetail of lectureData.resourceChildren) {
-                    if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource' && lectureDetail.name.toLowerCase()==='feedback link') { //it's a url
+                    if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource'
+                        && lectureDetail.name.toLowerCase()==='feedback link') { //it's a url
                         let feedback: Feedback =  new Feedback;
                         feedback.url = lectureDetail.url;
-                    } else if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource' && lectureDetail.name.toLowerCase()==='lectures link') { //it's a url
+                        feedback.name = lectureDetail.name;
+                        lecture.feedback = feedback;
+                    } else if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource'
+                        && lectureDetail.name.toLowerCase()==='lecture link') { //it's a url
                         lecture.url = lectureDetail.url;
                     } else if(lectureDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
                         lecture.learningOutcomesUrl = lectureDetail.resourceId;
-                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder' && lectureDetail.name.toLowerCase()==='resources') {
+                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder'
+                        && lectureDetail.name.toLowerCase()==='resources') {
                         let trimmedResourceId = lectureDetail.resourceId.substring(0, lectureDetail.resourceId.length - 1);
-                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');//remove group
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
+                        resourceUrl = resourceUrl  + trimmedResourceId + '.json';
                         lecture.resourcesUrl = resourceUrl;
                     }
                 }
@@ -217,7 +241,7 @@ export class WeekService {
         for(let seminarData of body.content_collection[0].resourceChildren) {
             if (seminarData.type === 'org.sakaiproject.content.types.folder') { //it's a folder
                 seminar.id = seminarData.resourceId;
-                //seminar.name = seminarData.name;
+                seminar.name = seminarData.name;
                 seminar.description = seminarData.description;
                 seminar.seminarInstances = new Array<SeminarInstance>();
                 for (let seminarDetail of seminarData.resourceChildren) {
@@ -229,10 +253,12 @@ export class WeekService {
                         seminar.seminarInstances.push(seminarInstance);
                     } else if(seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
                         seminar.learningOutcomesUrl = seminarDetail.resourceId;
-                    } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder' && seminarDetail.name.toLowerCase()==='resources') {
+                    } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder'
+                                && seminarDetail.name.toLowerCase()==='resources') {
                         let trimmedResourceId = seminarDetail.resourceId.substring(0, seminarDetail.resourceId.length - 1);
-                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
-                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl + trimmedResourceId + '.json'; //remove group
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, ''); //remove group
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
+                        resourceUrl = resourceUrl + trimmedResourceId + '.json';
                         seminar.resourcesUrl = resourceUrl;
                     }
                 }

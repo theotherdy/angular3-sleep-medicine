@@ -6,6 +6,7 @@ import { SeminarInstance } from './seminar-instance';
 
 export class Seminar {
     id: string;
+    name: string;
     description: string;
     learningOutcomes: string;
     learningOutcomesUrl: string;

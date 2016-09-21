@@ -8,8 +8,9 @@ import { AssessmentComponent } from './assessment.component';
 import myGlobals = require('./globals');
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    template: `
+    /*template: `
         <modyules-component></modyules-component>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -27,7 +28,9 @@ import myGlobals = require('./globals');
             </div>
         </nav>
         <assessment-component [assessmentUrl] = "assessmentUrl"></assessment-component>
-        `,
+        `,*/
+    styleUrls:  ['app.component.css'],
+    templateUrl: 'app.component.html',
     directives: [AssessmentComponent, ModyuleComponent, ResourceComponent]
     //directives: [ROUTER_DIRECTIVES],
     //providers: [

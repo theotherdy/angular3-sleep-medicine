@@ -13,3 +13,7 @@ li.resources-list {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.scni-blue {
+  color: #001b54;
+}

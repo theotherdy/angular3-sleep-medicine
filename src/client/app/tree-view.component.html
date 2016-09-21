@@ -1,12 +1,12 @@
 <ul class="list-group">
-    <li *ngFor="let resource of resources" class="list-group-item">
+    <li *ngFor="let resource of resources" class="list-group-item truncate">
         <a *ngIf="resource.fileType !== 'folder'" href="{{ resource.url }}">
             <fa *ngIf="resource.fileType === 'reading'" [name]="'book'"></fa>
             <fa *ngIf="resource.fileType === 'pdf'" [name]="'file-pdf-o'"></fa>
             <fa *ngIf="resource.fileType === 'xls'" [name]="'file-excel-o'"></fa>
             <fa *ngIf="resource.fileType === 'doc'" [name]="'file-word-o'"></fa>
             <fa *ngIf="resource.fileType === 'file'" [name]="'file-o'"></fa>
-            {{resource.name}}
+            {{ resource.name }}
         </a>
         <span *ngIf="resource.fileType === 'folder'" (click)="resource.toggle()" >
             <fa *ngIf="resource.expanded" [name]="'folder-open-o'"></fa>
